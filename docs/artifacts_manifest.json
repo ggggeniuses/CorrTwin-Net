@@ -1,0 +1,43 @@
+{
+  "project": "CorrTwin-Net",
+  "label_definition": "clean-channel normalized ensemble correlation magnitude |R| for ACF/CCF/FCF",
+  "current_verified_benchmark": {
+    "samples": 10000,
+    "curve_points": 128,
+    "num_realizations": 100,
+    "epochs": 100,
+    "ood_samples_per_scenario": 2000
+  },
+  "source_and_config": [
+    "channel_sim/",
+    "models/",
+    "utils/",
+    "experiments/",
+    "configs/",
+    "tests/",
+    "notebooks/",
+    "docs/"
+  ],
+  "data_artifacts": {
+    "sample_dataset": "data/sample_dataset.npz",
+    "latest_generated_splits": [
+      "data_formal_p0/train.npz",
+      "data_formal_p0/val.npz",
+      "data_formal_p0/test.npz"
+    ],
+    "metadata": "data_formal_p0/formal_dataset_metadata.json"
+  },
+  "model_artifacts": {
+    "best_checkpoints": [
+      "results_formal_p0/checkpoints/mlp_best.pt",
+      "results_formal_p0/checkpoints/resmlp_best.pt"
+    ],
+    "run_directories": "results_formal_p0/runs/",
+    "sklearn_pickles": "results_formal_p0/runs/**/{ridge,random_forest,knn}.pkl"
+  },
+  "result_artifacts": {
+    "metrics": "results_formal_p0/metrics/",
+    "figures": "results_formal_p0/figures/"
+  },
+  "upload_note": "Large .npz, .pt, and .pkl files may be preserved in the local zip. For a normal GitHub repository, consider using GitHub Releases for binary artifacts."
+}

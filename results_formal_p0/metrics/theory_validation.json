@@ -1,0 +1,28 @@
+{
+  "num_realizations": 2000,
+  "analytic_monte_carlo": {
+    "acf_mse": 9.630429076423752e-08,
+    "acf_mae": 0.0002586685586720705,
+    "acf_max_abs_error": 0.00047087669372558594,
+    "ccf_mse": 0.00032982745324261487,
+    "ccf_mae": 0.014170696027576923,
+    "ccf_max_abs_error": 0.037321023643016815,
+    "fcf_mse": 8.594484825152904e-05,
+    "fcf_mae": 0.006878748536109924,
+    "fcf_max_abs_error": 0.021651089191436768,
+    "max_abs_error": 0.037321023643016815
+  },
+  "label_definition": "normalized ensemble correlation magnitude |R|",
+  "actual_generator": {
+    "acf_mse": 2.5031837935785006e-07,
+    "acf_mae": 0.0003389932680875063,
+    "acf_max_abs_error": 0.0013366937637329102,
+    "ccf_mse": 8.519800758222118e-06,
+    "ccf_mae": 0.002331099007278681,
+    "ccf_max_abs_error": 0.006974649615585804,
+    "fcf_mse": 3.23840431519784e-05,
+    "fcf_mae": 0.004764731042087078,
+    "fcf_max_abs_error": 0.008792638778686523,
+    "max_abs_error": 0.008792638778686523
+  }
+}

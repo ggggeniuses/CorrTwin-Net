@@ -1,0 +1,29 @@
+{
+  "samples": 10000,
+  "curve_points": 128,
+  "include_ccf": true,
+  "num_realizations": 100,
+  "seed": 42,
+  "num_time_samples": 512,
+  "num_space_samples": 512,
+  "num_frequency_samples": 512,
+  "time_step": 0.0001,
+  "label_definition": "normalized ensemble correlation magnitude |E[h h*] / E[|h|^2]|; magnitude is taken after ensemble aggregation",
+  "feature_names": [
+    "is_rician",
+    "fc",
+    "velocity_mps",
+    "num_paths",
+    "k_factor_db",
+    "antenna_spacing",
+    "delay_spread",
+    "bandwidth"
+  ],
+  "coordinate_formulas": {
+    "lag_indices": "0..curve_points-1",
+    "time_lags_s": "lag_indices * time_step",
+    "spatial_distances_lambda": "lag_indices * sample_antenna_spacing",
+    "frequency_offsets_hz": "lag_indices * sample_bandwidth / (num_frequency_samples - 1)"
+  },
+  "notes": "Formal labels are clean channel statistics without AWGN/SNR. Rayleigh and Rician are sampled through explicit channel_type/is_rician."
+}

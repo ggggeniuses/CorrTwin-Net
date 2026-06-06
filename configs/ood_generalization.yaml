@@ -1,0 +1,12 @@
+scenarios:
+  velocity_ood:
+    velocity_mps: 45.0
+  k_factor_ood:
+    channel_type: rician
+    k_factor_db: 18.0
+  path_num_ood:
+    num_paths: 24
+  delay_spread_ood:
+    delay_spread: 0.0000008
+  bandwidth_ood:
+    bandwidth: 40000000.0

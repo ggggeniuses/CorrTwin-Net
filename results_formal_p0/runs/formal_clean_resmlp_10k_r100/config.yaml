@@ -1,0 +1,14 @@
+epochs: 100
+batch_size: 64
+learning_rate: 0.001
+weight_decay: 1.0e-05
+hidden_dim: 256
+num_blocks: 3
+seed: 42
+device: auto
+run_name: formal_clean_resmlp_10k_r100
+deterministic: false
+data_dir: data_formal_p0
+results_dir: results_formal_p0
+curve_points: 128
+include_ccf: true

@@ -1,0 +1,6 @@
+seed: 42
+epochs: 50
+batch_size: 64
+learning_rate: 0.001
+hidden_dims: [128, 256, 256]
+weight_decay: 0.00001

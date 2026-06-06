@@ -1,0 +1,9 @@
+seed: 42
+rf_estimators: 100
+rf_max_depth: 18
+knn_neighbors: 7
+run_name: formal_clean_sklearn_10k_r100
+data_dir: data_formal_p0
+results_dir: results_formal_p0
+curve_points: 128
+include_ccf: true

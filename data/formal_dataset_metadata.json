@@ -1,0 +1,20 @@
+{
+  "samples": 1000,
+  "curve_points": 64,
+  "include_ccf": true,
+  "num_realizations": 16,
+  "seed": 42,
+  "label_definition": "normalized correlation magnitude |R|, ensemble averaged over independent realizations",
+  "feature_names": [
+    "is_rician",
+    "fc",
+    "velocity_mps",
+    "snr_db",
+    "num_paths",
+    "k_factor_db",
+    "antenna_spacing",
+    "delay_spread",
+    "bandwidth"
+  ],
+  "notes": "Rayleigh and Rician are sampled through an explicit channel_type/is_rician feature; K=0 with is_rician=0 means Rayleigh, not Rician K=0 dB."
+}

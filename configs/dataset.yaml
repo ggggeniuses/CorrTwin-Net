@@ -1,0 +1,13 @@
+seed: 42
+samples: 2000
+curve_points: 128
+include_ccf: false
+splits:
+  train: 0.7
+  val: 0.15
+  test: 0.15
+simulation:
+  num_time_samples: 512
+  num_frequency_samples: 512
+  num_space_samples: 512
+  time_step: 0.0001

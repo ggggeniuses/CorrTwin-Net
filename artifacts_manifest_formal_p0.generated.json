@@ -1,0 +1,252 @@
+{
+  "artifacts": [
+    {
+      "relative_path": "data_formal_p0/formal_dataset_metadata.json",
+      "file_size": 979,
+      "sha256": "cb777479230c05833ca32bd3070c4f0c8e8e99d14e830255c0bafd84be5ce865",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "data_formal_p0/test.npz",
+      "file_size": 2170201,
+      "sha256": "9f76a2b9837acfdb15fba14beddaf25f38ba8e575d0c3c0047773a95edcc8b6a",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "data_formal_p0/train.npz",
+      "file_size": 10098907,
+      "sha256": "517c8d49e1a204accf723b4af5d313c775f87cf35c0acd487728fd0b8822053f",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "data_formal_p0/val.npz",
+      "file_size": 2170077,
+      "sha256": "adb93fd1fad1b2892a06ce037f3b0bf938a999eb8c073e7c15a40d106c9e665f",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/checkpoints/mlp_best.pt",
+      "file_size": 798092,
+      "sha256": "25c0f8a11dd24843507ec158597f3ec79281c7594ac6819438d5df374312d63a",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/checkpoints/resmlp_best.pt",
+      "file_size": 1989174,
+      "sha256": "fc8cad8ec6b0600972e790f03cd3e175c18b0dd09666f1462b16a1709497a459",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/all_model_comparison.csv",
+      "file_size": 1000,
+      "sha256": "38800be3d463b60bd5f2137aeb503fb1be59fa76b7b7ca5eb270c3580ffb5943",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/mlp_eval_metrics.json",
+      "file_size": 1242,
+      "sha256": "88d9d59493a6956ece89909b4ad9f525f175b446b9f0ba60ca18c03fa936c4e6",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/mlp_history.csv",
+      "file_size": 4741,
+      "sha256": "03cba4175025426a9c34a58e536de2f1bec7bd4bc5fcd6a879ca8cdcaaba774c",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/mlp_metrics.json",
+      "file_size": 1416,
+      "sha256": "1330fba5871b4ff5223436e21a95701950af5c17d098bca25b170e7910b62c33",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/ood_dataset_audit.json",
+      "file_size": 2334,
+      "sha256": "0130bfcc8476f4994c9f799078599ff7f7149976056e79d269a561927d1965ac",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/ood_generalization.csv",
+      "file_size": 14682,
+      "sha256": "9b6d86e793d8dd3ab516b0dffb18e977c5dd2222c2fecf7de483d3ab695eb092",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/ood_generalization.json",
+      "file_size": 34991,
+      "sha256": "cc4f7e20343e88223caa9fac341f1201e54d3395e1d49e7715c59d3f74e96c25",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/realization_convergence.csv",
+      "file_size": 680,
+      "sha256": "7e359fa796bf0ce086473adf2369986512ba773f28cc5824e259b1daccdd1252",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/realization_convergence.json",
+      "file_size": 2153,
+      "sha256": "404029b166227749e700b90be3be1128c90f47ff57cfeabafc30422fc5f66b62",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/resmlp_eval_metrics.json",
+      "file_size": 1243,
+      "sha256": "3bd150de12519f68dc7e43216fe9cad23086c212fb08bd01aa591cd4bf8f7efd",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/resmlp_history.csv",
+      "file_size": 4754,
+      "sha256": "b2595b5ad7ae63f3073a1f52e6696d3e64e03403af32d6d8e2a4345830995ed7",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/resmlp_metrics.json",
+      "file_size": 1416,
+      "sha256": "50af41873084520a82dd3ac2124cbc25b0d5893a7941d0651c755b33d0105380",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/sklearn_baselines.csv",
+      "file_size": 3061,
+      "sha256": "87437a8b296885e48272966c27e3ce9e9b69bc0e996933077c4693f0a23ab91d",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/sklearn_baselines.json",
+      "file_size": 6251,
+      "sha256": "9f6e1195754a93e35ae5cc3951ea4cb634018592318b9550154455b978e56679",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/speed_comparison.csv",
+      "file_size": 313,
+      "sha256": "5809436a1db9da745e094fd0ca9cbda4d7807054a01fd703f9736a8c1dfe3228",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/speed_comparison.json",
+      "file_size": 398,
+      "sha256": "ec81f7cd2a0e523a287af66044247a2182ae32ab0fbb9e90a84a6103612b7ac1",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/metrics/theory_validation.json",
+      "file_size": 1012,
+      "sha256": "55ddb72ae2b2a581f2245bb0d1f3e266a63ab60775868adeb0d532df59d68d91",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/formal_clean_mlp_10k_r100/model.pt",
+      "file_size": 797544,
+      "sha256": "ed77ca0ac959614ea0a4cefa386a4e4748c75a81156e7c4f8a78ba39002f1b5b",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/formal_clean_resmlp_10k_r100/model.pt",
+      "file_size": 1988030,
+      "sha256": "8f67bc7c405a7f51b4e665ece70a50397669e60c183d4ba47afac731d80cdadb",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/formal_clean_sklearn_10k_r100/knn.pkl",
+      "file_size": 11522848,
+      "sha256": "840b9318a30ad77ce141a6551da7a43f1048794d454f6779c0665ff0ade53660",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/formal_clean_sklearn_10k_r100/random_forest.pkl",
+      "file_size": 2767195657,
+      "sha256": "8ea28f640d1067f765f011f20751916aec64b768a058201bcc1212be2845bfc0",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/formal_clean_sklearn_10k_r100/ridge.pkl",
+      "file_size": 15089,
+      "sha256": "30a2336faef618bc99709a748dc9347377b232add40d7f82b7fd0fab433b6093",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/sklearn_baselines/knn.pkl",
+      "file_size": 11522848,
+      "sha256": "840b9318a30ad77ce141a6551da7a43f1048794d454f6779c0665ff0ade53660",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/sklearn_baselines/random_forest.pkl",
+      "file_size": 2767195657,
+      "sha256": "8ea28f640d1067f765f011f20751916aec64b768a058201bcc1212be2845bfc0",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    },
+    {
+      "relative_path": "results_formal_p0/runs/sklearn_baselines/ridge.pkl",
+      "file_size": 15089,
+      "sha256": "30a2336faef618bc99709a748dc9347377b232add40d7f82b7fd0fab433b6093",
+      "created_at": "2026-06-06T10:29:47.401869+00:00",
+      "git_commit": null,
+      "dataset_config_version": "p0_clean_channel_v2"
+    }
+  ]
+}

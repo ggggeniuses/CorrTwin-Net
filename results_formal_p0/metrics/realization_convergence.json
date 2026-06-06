@@ -1,0 +1,71 @@
+{
+  "reference_realizations": 2000,
+  "reference_seconds": 5.46110039999985,
+  "params": {
+    "channel_type": "rayleigh",
+    "is_rician": 0.0,
+    "fc": 3500000000.0,
+    "velocity_mps": 16.666666666666668,
+    "num_paths": 16,
+    "k_factor_db": 0.0,
+    "antenna_spacing": 0.25,
+    "delay_spread": 1.5e-07,
+    "bandwidth": 20000000.0
+  },
+  "rows": [
+    {
+      "num_realizations": 1,
+      "label_mse_vs_reference": 0.04629269242286682,
+      "label_variance": 0.0250242967158556,
+      "seconds_per_label": 0.0027070666668199315
+    },
+    {
+      "num_realizations": 2,
+      "label_mse_vs_reference": 0.018489906564354897,
+      "label_variance": 0.010106134228408337,
+      "seconds_per_label": 0.005365766667334053
+    },
+    {
+      "num_realizations": 4,
+      "label_mse_vs_reference": 0.008218511939048767,
+      "label_variance": 0.004702175036072731,
+      "seconds_per_label": 0.010662833334208699
+    },
+    {
+      "num_realizations": 8,
+      "label_mse_vs_reference": 0.0036078908015042543,
+      "label_variance": 0.003042987547814846,
+      "seconds_per_label": 0.021304533333022846
+    },
+    {
+      "num_realizations": 16,
+      "label_mse_vs_reference": 0.0017466027056798339,
+      "label_variance": 0.0023540628608316183,
+      "seconds_per_label": 0.042329599999599545
+    },
+    {
+      "num_realizations": 32,
+      "label_mse_vs_reference": 0.0009949608938768506,
+      "label_variance": 0.0012298895744606853,
+      "seconds_per_label": 0.08477263333406881
+    },
+    {
+      "num_realizations": 64,
+      "label_mse_vs_reference": 0.00022896041627973318,
+      "label_variance": 0.0004668735491577536,
+      "seconds_per_label": 0.1695518666662489
+    },
+    {
+      "num_realizations": 100,
+      "label_mse_vs_reference": 0.0001755306002451107,
+      "label_variance": 0.00022839165467303246,
+      "seconds_per_label": 0.2674523333334946
+    },
+    {
+      "num_realizations": 200,
+      "label_mse_vs_reference": 0.00010156367352465168,
+      "label_variance": 0.0002614494296722114,
+      "seconds_per_label": 0.5300341999997423
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+seed: 42
+samples: 2000
+curve_points: 128
+include_ccf: true
+splits:
+  train: 0.7
+  val: 0.15
+  test: 0.15

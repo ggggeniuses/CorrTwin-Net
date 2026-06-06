@@ -1,0 +1,5 @@
+method,mode,seconds_per_sample,batch_size,device
+traditional_simulation,single_realization,0.0024864523333356678,1,cpu
+traditional_simulation,100_realization_ensemble,0.23861750466666612,1,cpu
+resmlp,single_sample_latency,0.0007369199999993725,1,cuda
+resmlp,batched_throughput,5.150333333100813e-06,300,cuda

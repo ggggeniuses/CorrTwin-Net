@@ -1,0 +1,11 @@
+{
+  "num_realizations": 100,
+  "single_realization_simulator": 0.0024864523333356678,
+  "ensemble_simulator": 0.23861750466666612,
+  "model_single_sample": 0.0007369199999993725,
+  "model_batched_per_sample": 5.150333333100813e-06,
+  "ensemble_vs_single_model_speedup": 323.8038113592646,
+  "ensemble_vs_batched_model_speedup": 46330.49731618126,
+  "device": "cuda",
+  "batch_size": 300
+}
