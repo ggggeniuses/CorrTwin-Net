@@ -20,6 +20,7 @@ from models.sklearn_baselines import load_sklearn_model
 from utils.config import load_yaml_config
 from utils.io_utils import save_json
 from utils.metrics import segmented_curve_metrics
+from utils.normalization import FEATURE_NAMES
 from utils.plotting import plot_curve_pair
 
 
@@ -73,6 +74,7 @@ def coerce_overrides(overrides: dict) -> dict:
 def audit_ood_dataset(scenario: str, raw_params: list[dict], x: np.ndarray) -> dict:
     report: dict[str, object] = {
         "samples": len(raw_params),
+        "feature_names": FEATURE_NAMES,
         "normalized_feature_min": np.min(x, axis=0).astype(float).tolist(),
         "normalized_feature_max": np.max(x, axis=0).astype(float).tolist(),
     }
@@ -135,17 +137,20 @@ def main() -> None:
     rows = []
     audit = {}
     first_example = None
-    for scenario, overrides in selected.items():
+    for scenario_index, (scenario, overrides) in enumerate(selected.items()):
         overrides = coerce_overrides(overrides)
         x, y, raw_params = generate_dataset(
             samples=args.samples,
             curve_points=args.curve_points,
             include_ccf=args.include_ccf,
             num_realizations=args.num_realizations,
-            seed=1000 + len(rows),
+            seed=1000 + 997 * scenario_index,
             overrides=overrides,
         )
         audit[scenario] = audit_ood_dataset(scenario, raw_params, x)
+        failed_flags = [key for key, value in audit[scenario].items() if key.startswith("all_") and value is not True]
+        if failed_flags:
+            raise RuntimeError(f"OOD audit failed for {scenario}: {failed_flags}")
         for model_name, (kind, model) in models.items():
             pred = predict(kind, model, x, device)
             if pred.shape[1] != y.shape[1]:

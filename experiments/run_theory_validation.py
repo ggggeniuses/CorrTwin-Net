@@ -90,7 +90,10 @@ def plot_validation(x: np.ndarray, sim: np.ndarray, theory: np.ndarray, title: s
     try:
         plt.savefig(output, dpi=180)
     except PermissionError:
-        plt.savefig(output.with_name(f"{output.stem}_latest{output.suffix}"), dpi=180)
+        try:
+            plt.savefig(output.with_name(f"{output.stem}_latest{output.suffix}"), dpi=180)
+        except PermissionError:
+            print(f"skip locked figure output: {output}")
     plt.close()
 
 
@@ -112,6 +115,47 @@ def metric_block(acf_sim: np.ndarray, acf_theory: np.ndarray, ccf_sim: np.ndarra
                 np.max(np.abs(fcf_sim - fcf_theory)),
             )
         ),
+    }
+
+
+def rician_sanity_validation(args: argparse.Namespace) -> dict[str, object]:
+    params = {
+        "channel_type": "rician",
+        "is_rician": 1.0,
+        "fc": args.fc,
+        "velocity_mps": args.velocity,
+        "num_paths": args.num_paths,
+        "k_factor_db": 8.0,
+        "antenna_spacing": 0.025,
+        "delay_spread": args.delay_spread,
+        "bandwidth": args.bandwidth,
+    }
+    curves = simulate_statistical_curves(
+        params,
+        curve_points=args.curve_points,
+        include_ccf=True,
+        num_realizations=max(64, min(args.num_realizations, 512)),
+        seed=args.seed + 1800,
+        time_step=args.time_step,
+        num_frequency_samples=args.num_frequency_samples,
+    )
+    cp = args.curve_points
+    segments = {
+        "acf": curves[:cp],
+        "ccf": curves[cp : 2 * cp],
+        "fcf": curves[2 * cp :],
+    }
+    max_value = max(float(np.max(values)) for values in segments.values())
+    min_value = min(float(np.min(values)) for values in segments.values())
+    zero_lag_errors = {name: float(abs(values[0] - 1.0)) for name, values in segments.items()}
+    return {
+        "k_factor_db": params["k_factor_db"],
+        "num_realizations": max(64, min(args.num_realizations, 512)),
+        "all_finite": bool(np.all(np.isfinite(curves))),
+        "min_value": min_value,
+        "max_value": max_value,
+        "zero_lag_errors": zero_lag_errors,
+        "passes": bool(np.all(np.isfinite(curves)) and min_value >= -1e-6 and max_value <= 1.05 and max(zero_lag_errors.values()) < 1e-6),
     }
 
 
@@ -140,6 +184,7 @@ def main() -> None:
     metrics = {
         "num_realizations": args.num_realizations,
         "analytic_monte_carlo": metric_block(acf_sim, acf_theory, ccf_sim, ccf_theory, fcf_sim, fcf_theory),
+        "rician_sanity": rician_sanity_validation(args),
         "label_definition": "normalized ensemble correlation magnitude |R|",
     }
 

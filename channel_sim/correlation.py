@@ -11,6 +11,8 @@ implements `|mean(R_i)|`/power-weighted ensemble correlation, not
 
 from __future__ import annotations
 
+import warnings
+
 import numpy as np
 
 
@@ -46,12 +48,21 @@ def correlation_sufficient_statistics(
 def finalize_correlation_magnitude(
     numerator_sum: np.ndarray,
     power_sum: float,
+    tolerance: float = 1e-2,
 ) -> np.ndarray:
     """Convert ensemble complex sufficient statistics into `|R|`."""
     curve = np.asarray(numerator_sum, dtype=np.complex128) / max(float(power_sum), 1e-14)
     magnitude = np.abs(np.nan_to_num(curve, nan=0.0, posinf=0.0, neginf=0.0))
     magnitude /= max(float(magnitude[0]), 1e-14)
-    return np.clip(magnitude, 0.0, 1.0).astype(np.float32)
+    max_value = float(np.max(magnitude)) if magnitude.size else 0.0
+    if max_value > 1.0 + tolerance:
+        warnings.warn(
+            f"normalized correlation magnitude exceeds 1.0 by {max_value - 1.0:.3e}; "
+            "returning the unclipped curve for auditability",
+            RuntimeWarning,
+            stacklevel=2,
+        )
+    return magnitude.astype(np.float32)
 
 
 def compute_raw_correlation(x: np.ndarray, num_lags: int = 128) -> np.ndarray:

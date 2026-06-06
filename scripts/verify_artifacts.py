@@ -21,6 +21,11 @@ def main() -> None:
     parser.add_argument("--manifest", default="artifacts_manifest.generated.json")
     args = parser.parse_args()
     manifest_path = ROOT / args.manifest
+    if not manifest_path.exists():
+        raise SystemExit(
+            f"Manifest file not found: {manifest_path}. "
+            "Build it first with scripts/build_artifacts_manifest.py."
+        )
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
     failures = []
     for item in payload.get("artifacts", []):

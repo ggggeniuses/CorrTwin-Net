@@ -77,6 +77,8 @@ python experiments/run_compare_all_models.py --results-dir results_formal_p0
 python experiments/run_ood_generalization.py --all --samples 2000 --curve-points 128 --include-ccf --num-realizations 100 --results-dir results_formal_p0
 python experiments/run_speed_comparison.py --model resmlp --runs 300 --num-realizations 100 --results-dir results_formal_p0
 python experiments/run_realization_convergence.py --curve-points 128 --reference-realizations 2000 --results-dir results_formal_p0
+python scripts/build_artifacts_manifest.py --data-dir data_formal_p0 --results-dir results_formal_p0 --output artifacts_manifest_formal_p0.generated.json
+python scripts/verify_artifacts.py --manifest artifacts_manifest_formal_p0.generated.json
 ```
 
 ## Simulator Validation
@@ -87,11 +89,11 @@ The project includes lightweight theory sanity checks:
 - Spatial `|CCF|`: isotropic arrival-angle Bessel reference.
 - Frequency `|FCF|`: exponential PDP reference.
 
-![Theory ACF Validation](results/figures/theory_acf_validation.png)
+![Theory ACF Validation](results_formal_p0/figures/theory_acf_validation.png)
 
-![Theory CCF Validation](results/figures/theory_ccf_validation.png)
+![Theory CCF Validation](results_formal_p0/figures/theory_ccf_validation.png)
 
-Validation metrics are saved in `results/metrics/theory_validation.json`.
+Validation metrics are saved in `results_formal_p0/metrics/theory_validation.json`.
 
 ## Main Results
 
@@ -109,21 +111,21 @@ Current formal P0 clean-channel benchmark results with `10000` samples, `128` po
 
 In this corrected benchmark, ResMLP is the best overall model, while RandomForest remains a strong traditional baseline.
 
-![All Model Comparison](results/figures/all_model_comparison.png)
+![All Model Comparison](results_formal_p0/figures/all_model_comparison.png)
 
 Prediction examples:
 
-![MLP ACF Prediction](results/figures/mlp_acf_prediction_example.png)
+![MLP ACF Prediction](results_formal_p0/figures/mlp_acf_prediction_example.png)
 
-![MLP CCF Prediction](results/figures/mlp_ccf_prediction_example.png)
+![MLP CCF Prediction](results_formal_p0/figures/mlp_ccf_prediction_example.png)
 
-![MLP FCF Prediction](results/figures/mlp_fcf_prediction_example.png)
+![MLP FCF Prediction](results_formal_p0/figures/mlp_fcf_prediction_example.png)
 
 ## OOD Generalization
 
-OOD scenarios include high velocity, high Rician K-factor, larger path count, larger delay spread, and wider bandwidth. Results are saved to `results/metrics/ood_generalization.csv`.
+OOD scenarios include high velocity, high Rician K-factor, larger path count, larger delay spread, and wider bandwidth. Results are saved to `results_formal_p0/metrics/ood_generalization.csv`.
 
-![OOD Generalization](results/figures/ood_generalization_bar.png)
+![OOD Generalization](results_formal_p0/figures/ood_generalization_bar.png)
 
 ## Speed Comparison
 
@@ -142,7 +144,7 @@ The speed report separates single-sample latency from batched throughput because
 
 The current convergence study compares smaller ensemble sizes with an `N=2000` reference. For the representative Rayleigh scenario at `128` curve points, `N=100` gives label MSE about `1.76e-4` versus the reference. Results are saved to `results_formal_p0/metrics/realization_convergence.csv`.
 
-![Speed Comparison](results/figures/inference_speed_comparison.png)
+![Speed Comparison](results_formal_p0/figures/inference_speed_comparison.png)
 
 ## Reproducibility
 
@@ -192,14 +194,22 @@ CorrTwin-Net/
 +-- tests/
 +-- docs/
 +-- notebooks/
-+-- results/
-+-- data/
++-- results_formal_p0/        # tracked formal figures and lightweight metrics
++-- data_formal_p0/           # metadata tracked; large NPZ files are generated locally
++-- results/                  # generated quick-run outputs, ignored by Git
++-- data/                     # generated quick-run data, ignored by Git except sample data
 +-- .github/workflows/
 ```
 
+## Large Artifacts
+
+Large datasets and model weights are not committed. Files such as `data_formal_p0/*.npz`, `results_formal_p0/checkpoints/*.pt`, and `results_formal_p0/runs/**/*.pkl` are generated locally by the reproduction scripts. The repository keeps formal P0 figures, lightweight metrics, metadata, and SHA256 manifests so results can be inspected without uploading multi-GB artifacts.
+
+If release assets are published later, download instructions should be added here and matched against `artifacts_manifest_formal_p0.generated.json`.
+
 ## Limitations
 
-- This is a development preview until the long formal pipeline and realization convergence study are completed.
+- This is a development-preview research prototype with a completed formal P0 benchmark, not a production-grade wireless simulator.
 - The current simulator is lightweight and does not replace 3GPP, GBSM, BDCM, ray-tracing, or measured channel datasets.
 - The current task predicts normalized ensemble correlation magnitudes, not full signed/complex correlation functions.
 - The generated data comes from simulation, not real measurements.

@@ -57,4 +57,4 @@ Realization convergence with an `N=2000` reference gives `N=100` label MSE about
 
 ## Boundary
 
-The simulator is still lightweight and does not replace 3GPP, GBSM, BDCM, ray tracing, or measured channel datasets. The project is useful as a theory-checked surrogate modeling prototype for parameter sweeps.
+The simulator is still lightweight and does not replace 3GPP, GBSM, BDCM, ray tracing, or measured channel datasets. The current target is normalized ensemble correlation magnitude, so the model does not predict full signed or complex correlation functions. The OOD evaluation covers finite parameter shifts only and does not prove universal real-world generalization. The project is best understood as a theory-checked surrogate modeling prototype for clean-channel parameter sweeps.

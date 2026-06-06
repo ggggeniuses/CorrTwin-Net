@@ -1,6 +1,16 @@
 {
   "velocity_ood": {
     "samples": 2000,
+    "feature_names": [
+      "is_rician",
+      "fc",
+      "velocity_mps",
+      "num_paths",
+      "k_factor_db",
+      "antenna_spacing",
+      "delay_spread",
+      "bandwidth"
+    ],
     "normalized_feature_min": [
       0.0,
       0.0,
@@ -27,24 +37,34 @@
   },
   "k_factor_ood": {
     "samples": 2000,
+    "feature_names": [
+      "is_rician",
+      "fc",
+      "velocity_mps",
+      "num_paths",
+      "k_factor_db",
+      "antenna_spacing",
+      "delay_spread",
+      "bandwidth"
+    ],
     "normalized_feature_min": [
       1.0,
       0.0,
-      0.0004381442558951676,
+      0.0010588752338662744,
       0.0,
       1.2000000476837158,
       0.0,
-      0.0021061766892671585,
+      0.00015919865109026432,
       0.0
     ],
     "normalized_feature_max": [
       1.0,
       1.0,
-      0.9999257326126099,
+      0.9982306361198425,
       1.0,
       1.2000000476837158,
       1.0,
-      0.9996912479400635,
+      0.9992924928665161,
       1.0
     ],
     "all_rician": true,
@@ -52,34 +72,54 @@
   },
   "path_num_ood": {
     "samples": 2000,
+    "feature_names": [
+      "is_rician",
+      "fc",
+      "velocity_mps",
+      "num_paths",
+      "k_factor_db",
+      "antenna_spacing",
+      "delay_spread",
+      "bandwidth"
+    ],
     "normalized_feature_min": [
       0.0,
       0.0,
-      9.358316310681403e-05,
+      0.00015200761845335364,
       1.6666666269302368,
       0.0,
       0.0,
-      0.0004220122063998133,
+      0.00030956658883951604,
       0.0
     ],
     "normalized_feature_max": [
       1.0,
       1.0,
-      0.9973959922790527,
+      0.9985467195510864,
       1.6666666269302368,
-      0.999872624874115,
+      0.9998362064361572,
       1.0,
-      0.9996412396430969,
+      0.9989345073699951,
       1.0
     ],
     "all_num_paths_24": true
   },
   "delay_spread_ood": {
     "samples": 2000,
+    "feature_names": [
+      "is_rician",
+      "fc",
+      "velocity_mps",
+      "num_paths",
+      "k_factor_db",
+      "antenna_spacing",
+      "delay_spread",
+      "bandwidth"
+    ],
     "normalized_feature_min": [
       0.0,
       0.0,
-      0.00045630091335624456,
+      0.0004363278276287019,
       0.0,
       0.0,
       0.0,
@@ -89,9 +129,9 @@
     "normalized_feature_max": [
       1.0,
       1.0,
-      0.9985001087188721,
+      0.9999287724494934,
       1.0,
-      0.9988296627998352,
+      0.9999346733093262,
       1.0,
       1.6666666269302368,
       1.0
@@ -100,24 +140,34 @@
   },
   "bandwidth_ood": {
     "samples": 2000,
+    "feature_names": [
+      "is_rician",
+      "fc",
+      "velocity_mps",
+      "num_paths",
+      "k_factor_db",
+      "antenna_spacing",
+      "delay_spread",
+      "bandwidth"
+    ],
     "normalized_feature_min": [
       0.0,
       0.0,
-      0.0004484228265937418,
+      3.2279614970320836e-05,
       0.0,
       0.0,
       0.0,
-      0.000924292195122689,
+      0.0011540355626493692,
       2.3333332538604736
     ],
     "normalized_feature_max": [
       1.0,
       1.0,
-      0.9993094205856323,
+      0.9998875260353088,
       1.0,
-      0.9994013905525208,
+      0.9997881650924683,
       1.0,
-      0.9992902278900146,
+      0.9995496273040771,
       2.3333332538604736
     ],
     "all_outside_training": true

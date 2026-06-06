@@ -34,6 +34,7 @@ def iter_artifacts(data_dir: str, results_dir: str) -> list[Path]:
         f"{results_dir}/runs/**/*.pkl",
         f"{results_dir}/metrics/*.json",
         f"{results_dir}/metrics/*.csv",
+        f"{results_dir}/figures/*.png",
         f"{results_dir}/reproduction_manifest.json",
     ]
     paths: list[Path] = []

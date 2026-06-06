@@ -11,10 +11,10 @@ Python 3.10 or 3.11
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-lock.txt
 ```
 
-For an exact local reference, see `requirements-lock.txt`.
+`requirements.txt` is kept as a readable dependency summary; `requirements-lock.txt` is the preferred reproducible install input and is also used by CI.
 
 ## Formal Reproduction
 
@@ -65,10 +65,11 @@ Quick mode is not the reported formal result.
 python -m pytest -q
 ```
 
-The latest local run passed 22 tests. The pytest cache warning in this environment is only a cache-write permission warning.
+The latest local run passed 24 tests. The pytest cache warning in this environment is only a cache-write permission warning.
 
 ## Notes
 
 - GPU acceleration is used automatically when `torch.cuda.is_available()` is true and `--device auto` is used.
 - Formal labels are clean channel statistics and do not include AWGN/SNR.
 - The task predicts normalized ensemble correlation magnitudes, not full signed or complex correlations.
+- Large NPZ datasets, checkpoints, and sklearn pickle weights are intentionally generated locally instead of committed to Git.

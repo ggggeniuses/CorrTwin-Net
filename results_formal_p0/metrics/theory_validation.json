@@ -12,6 +12,19 @@
     "fcf_max_abs_error": 0.021651089191436768,
     "max_abs_error": 0.037321023643016815
   },
+  "rician_sanity": {
+    "k_factor_db": 8.0,
+    "num_realizations": 512,
+    "all_finite": true,
+    "min_value": 0.8079704642295837,
+    "max_value": 1.0000097751617432,
+    "zero_lag_errors": {
+      "acf": 0.0,
+      "ccf": 0.0,
+      "fcf": 0.0
+    },
+    "passes": true
+  },
   "label_definition": "normalized ensemble correlation magnitude |R|",
   "actual_generator": {
     "acf_mse": 2.5031837935785006e-07,
